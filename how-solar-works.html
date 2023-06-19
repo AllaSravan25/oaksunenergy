@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content= "Solar panels Photovoltaic cells, Solar energy, Renewable energy, Solar power, Solar installation, Solar electricity, Energy conversion, Solar usage, Energy storage, Battery systems, Solar monitoring, Energy consumption, Solar efficiency, Energy optimization">
+    <meta name="description" content="Discover how solar works and harness the power of renewable energy with Oaksun. Our solar panels collect sunlight and convert it into electrical energy through photovoltaic cells. The generated electricity is then used to power appliances and devices, reducing reliance on grid electricity and lowering energy costs. Excess electricity can be stored in energy storage systems, such as batteries, for later use. Monitor your solar energy production, consumption, and battery status with our advanced monitoring systems. Switch to solar and unlock the potential of clean, sustainable energy."
+    <title>How-Solar-Works</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha384-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+        integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+
+    <link rel="stylesheet" href="home.css">
+    <script src="home.js"></script>
+    <style>
+    
+        header nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            position:fixed;
+            z-index: 99999;
+            background-color: rgba(255, 255, 255, 0.2) ;
+            top: 0;
+            width: 100%;
+        }      
+        header nav ul {
+         margin-left: 20%;
+         }    
+        
+        .working-model {
+            max-width: 500px;
+            background-color: orange;
+            padding: 50px;
+            margin-top: 30px;
+            border-radius: 15px;
+        }
+
+        #how-solar-works {
+            background-image: url('https://giphy.com/embed/MOFMhTF8TV8pzo8z9S');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin-top: 100px;
+        }
+
+        .dancing-image {
+            position: absolute;
+            top: 100px;
+            left: 700px;
+            z-index: -1000;
+        }
+
+        /* ---------------------- responsive design --------------------- */
+
+        @media only screen and (max-width: 800px) {
+          header nav ul {
+              display: block;
+              position: fixed;
+              right: -600px;
+              top: 0;
+              width: 300px;
+              height: 99.99vh;
+              color: white;
+              text-align: center;
+              z-index: 100000000000000000;
+              transition: 0.3s;
+          }
+          header #nav-div{
+              background-color: none;
+          }
+          header nav ul li {
+              margin-top: 35px;
+              color: #212529;
+              display: block;
+          }
+          i.bi.bi-list::before{
+              width:55px;
+          }
+          .bi.bi-list {
+              display: block;
+              right: 0;
+              color: black;
+              font-weight: 900;
+              font-size: 45px;
+          } 
+          .bi.bi-x-lg {
+              display: block;
+              position: absolute;
+              top: 10px;
+              right: 6px;
+              color: #212529;
+              font-weight: 900;
+              font-size: 35px;
+              margin-bottom: 20px;
+            }
+          
+          header #nav-div {
+              display: block;
+              position: fixed;
+              background-color: white;
+              z-index: 1000000;
+          }
+        }          
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav id="nav-bar">
+            <div><img src="images/oaksunlogo2.png" alt="" id="logo"></div>
+            <ul id="nav-div">
+                <i class="bi bi-x-lg" onclick="closeNav()"></i>
+                <li><a href="https://oaksun.in">Home</a></li>
+                <li><a href="https://oaksun.in/about-us.html">About</a></li>
+                <li><a href="https://oaksun.in/services.html">Services</a></li>
+                <li><a href="https://oaksun.in/contact-us.html">Contact Us</a></li>
+                <li><a href="https://oaksun.in/solarcalculator.html">Calculator</a></li>
+            </ul>
+            <i class="bi bi-list" onclick="openNav()"></i>
+        </nav>
+    </header>
+
+    <section id="how-solar-works">
+
+
+
+        <div class="container-sm">
+
+            <main>
+                <section id="how">
+                    <h1>How Solar Works</h1>
+                    <article class="working-model gsap">
+                        <h2>Collect</h2>
+                        <p>Sunlight is collected using solar panels, typically mounted on rooftops or in open areas with
+                            ample sunlight exposure. The solar panels consist of photovoltaic cells that absorb
+                            sunlight.</p>
+                    </article>
+
+                    <article class="working-model gsap">
+                        <h2>Convert</h2>
+                        <p>The absorbed sunlight is converted into electrical energy through the photovoltaic effect.
+                            Within the solar panels, photons from the sunlight excite electrons in the semiconductor
+                            material of the cells, generating a flow of direct current (DC) electricity.</p>
+                    </article>
+
+                    <article class="working-model gsap">
+                        <h2>Use</h2>
+                        <p>The generated DC electricity is then converted into alternating current (AC) electricity
+                            using an inverter. AC electricity is the standard form of electricity used in homes and
+                            businesses.
+                            The AC electricity can be used immediately to power electrical appliances, lighting, and
+                            other devices within the property. It helps reduce the reliance on grid electricity and
+                            lowers energy costs.</p>
+                    </article>
+
+                    <article class="working-model gsap">
+                        <h2>Store</h2>
+                        <p>Excess electricity generated by the solar panels can be stored for later use, especially in
+                            situations where the demand exceeds the solar production or during periods of low sunlight.
+                            Energy storage systems, such as batteries, can be employed to store the excess electricity.
+                            These batteries store the energy in the form of chemical potential, which can be converted
+                            back to electrical energy when needed.</p>
+                    </article>
+
+                    <article class="working-model gsap">
+                        <h2>Monitor</h2>
+                        <p>Monitoring systems are employed to keep track of the solar energy production, energy
+                            consumption, and battery status.
+                            Solar monitoring systems provide real-time data on the performance of the solar panels,
+                            enabling you to evaluate the system's efficiency and identify any issues that may arise.
+                            Energy monitoring systems track the usage of electricity within the property, allowing you
+                            to monitor and optimize your energy consumption patterns.
+                            Battery monitoring systems provide information on the storage capacity and status of the
+                            batteries, ensuring their efficient operation.</p>
+                    </article>
+
+                </section>
+            </main>
+        </div>
+    </section>
+
+
+
+    <script>
+            /*--------------------------------- NAV BAR --------------------------------------------------*/
+    
+        function openNav (){
+          const navmenu = document.getElementById('nav-div')
+          navmenu.style.right = "0"
+        }
+        function closeNav (){
+          const navmenu = document.getElementById('nav-div')
+          navmenu.style.right = "-300px"
+        }
+        
+            const navbar = document.getElementById('nav-bar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) {
+          navbar.style.backgroundColor = "white";
+        }
+        else {
+          navbar.style.backgroundColor = "rgba(255, 255, 255, 0.3)"
+        }
+      });
+    
+    
+    /*---------------------------------------- END NAV-BAR -------------------------------------*/
+        gsap.to(".gsap", {
+            x: 10,
+            y: 10,
+            duration: 0.9,
+            stagger: 0.2,
+            ease: "power1.inOut",
+            yoyo: true,
+            repeat: -1
+        });
+
+    </script>
+</body>
+
+</html>

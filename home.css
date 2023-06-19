@@ -1,0 +1,755 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Global Styles */
+  .content {
+    display: block;
+  }
+  
+  #explore-button {
+    background-color: rgba(255, 255, 255);
+    color: black;
+    font-family: Roboto, 'sans-serif';
+    padding: 0 20px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Hero Section */
+  #whatsappicon {
+    top: 60px;
+    position: fixed;
+    right: 0;
+    padding: 80px 15px;
+    display: inline-block;
+    background-color: #7ed957;
+    border-radius: 5px;
+    z-index: 100000;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  #whatsappicon:hover {
+    transform: scale(1.09);
+  }
+  
+   header nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position:fixed;
+    z-index: 99999;
+    background-color: rgba(255, 255, 255, 0.2) ;
+    top: 0;
+    width: 100%;
+    }      
+   header nav ul {
+    margin-left: 20%;
+    }
+  #logo {
+    width: 200px;
+    position: relative;
+    margin-left: 15px;
+  }
+  
+  .bi.bi-x-lg,
+  .bi.bi-list {
+    display: none;
+  }
+  
+  header nav ul {
+    text-decoration: none;
+  }
+  
+  header nav ul li {
+    display: inline-block;
+    list-style: none;
+    padding: 18px 25px;
+    font-weight: 700;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  
+  header nav ul li a {
+    position: relative;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+  }
+  
+  header nav ul li a::after {
+    content: "";
+    background: green;
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -6px;
+    left: 0;
+    transition: 0.3s;
+  }
+  
+  header nav ul li a:hover::after {
+    width: 100%;
+  }
+  
+  .container-sm {
+    margin-top: 200px;
+    max-width: 1417px;
+  }
+  
+  #hero-div {
+    margin-top: 250px;
+    margin-left: 150px;
+  }
+  
+  #hero-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  #hero-section h1 {
+    font-size: 100px;
+    color: black;
+    max-width: 730px;
+    padding: 0;
+    margin: 0;
+    font-style: Roboto, 'sans-serif';
+    font-weight: 700;
+  }
+  
+  #hero-section p {
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    width: 400px;
+    font-size: 20px;
+    font-style: Roboto, 'sans-serif';
+  }
+  
+  .BookAppointmentButton {
+    margin-top: 20px;
+    background-color: #7ed957;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .BookAppointmentButton:hover {
+    box-shadow: 7px 7px 20px black;
+  }
+  
+  .ContactUsButton {
+    background-color: white;
+    color: black;
+    padding: 5px 35px;
+    border-radius: 5px;
+    border: 0.1px solid black;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .BookAppointmentButton svg {
+    margin-left: 5px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 2px;
+  }
+  
+  .ContactUsButton:hover {
+    box-shadow: 7px 7px 20px black;
+  }
+  
+  #hero-image {
+    width: 600px;
+    max-width: 100%;
+  }
+  
+  /* About Us Section */
+  #about-section {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 270px;
+    align-items: center;
+    text-align: justify;
+    justify-content: space-between;
+  }
+  
+  #about-section h2 {
+    text-align: center;
+    font-family: Roboto, 'sans-serif';
+    font-weight: 700;
+    font-size: 31px;
+  }
+  
+  #about-section p {
+    font-size: 20px;
+    margin-top: 50px;
+    max-width: 630px;
+  }
+  
+  #about-section img {
+    width: 550px;
+    max-width: 100%;
+  }
+  
+  /* Services Section */
+  #services-section {
+    margin-top: 170px;
+  }
+  
+  #services-section h2 {
+    text-align: center;
+    font-weight: 700;
+  }
+  
+  #services-section #services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 100px;
+  }
+  
+  #services-section #services .services-list img {
+    width: 350px;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  #services-section #services .services-list h3 {
+    letter-spacing: 0px;
+    margin-top: 25px;
+    font-weight: 600;
+    font-size: 35px;
+  }
+  
+  #services-section #services .services-list p {
+    width: 300px;
+    font-size: 16.2px;
+  }
+  
+  #services-section #services .services-list a {
+    color: rgb(46, 46, 92);
+    text-decoration: none;
+    padding: 3px;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 3px;
+  }
+  
+  /* EPC Work Flow Section */
+  #epc-section {
+    margin-top: 170px;
+  }
+  
+  #epc-section h2 {
+    text-align: center;
+    font-weight: 700;
+  }
+  
+  #epc-section #epc {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    align-items: center;
+  }
+  
+  #epc-section .epc {
+    border: 1px solid grey;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+  }
+  
+  #epc-section .epc img {
+    width: 290px;
+    max-width: 100%;
+    padding: 10px;
+  }
+  
+  #epc-section .epc .hidden-div {
+    background-color: #7ed957;
+    display: none;
+    transition: 0.3s;
+    margin: 0;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  #epc-section .epc h3 {
+    align-items: center;
+    margin-top: 30px;
+    font-weight: 700;
+    color: white;
+  }
+  
+  #epc-section .epc p {
+    width: 290px;
+    color: white;
+    font-weight: 100;
+    font-size: 16.4px;
+    margin: 0;
+    margin-top: 5px;
+    text-align: center;
+  }
+  
+  #epc-section .epc:hover .hidden-div {
+    display: block;
+  }
+  
+  #epc-section .epc:hover .epc > div {
+    display: none;
+  }
+  
+  /* How Solar Works Section */
+  #how-solar-works {
+    margin-top: 170px;
+  }
+  
+  #how-solar-works h2 {
+    text-align: center;
+    font-weight: 700;
+  }
+  
+  #how-solar-works > div {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  #how-solar-works .solar-working-process {
+    cursor: help;
+    transition: 0.6s;
+  }
+  
+  #how-solar-works .solar-working-process:hover {
+    transform: scale(1.1);
+  }
+  
+  #how-solar-works .solar-working-process img {
+    width: 150px;
+    max-width: 100%;
+  }
+  
+  #how-solar-works .solar-working-process h4 {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  /* FAQ Section */
+  section#faq-section div.container-sm {
+    text-align: center;
+    max-width: 700px;
+    margin-bottom: 180px;
+  }
+  
+  section#faq-section div h1 {
+    margin-top: 100px;
+    font-weight: 900;
+    padding-bottom: 50px;
+  }
+  
+  section#faq-section .question {
+    font-weight: bold;
+    cursor: pointer;
+    text-align: start;
+    display: inline-block;
+    align-items: flex-start;
+  }
+  
+  section#faq-section .answer {
+    display: none;
+    text-align: start;
+    margin-left: 17px;
+    padding-top: 10px;
+  }
+  
+  section#faq-section .faq {
+    background-color: rgb(241, 248, 238);
+    border: 0.1px solid black;
+    padding: 15px;
+    text-align: left;
+    position: relative;
+  }
+  
+  /* Footer */
+  footer#footer {
+    background-color: #e6efff;
+    margin-top: 50px;
+  }
+  
+  .row {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  footer#footer .col {
+    padding: 0 50px;
+  }
+  
+  #footer ul {
+    padding: 0;
+  }
+  
+  #footer ul li {
+    list-style: none;
+    text-decoration: none;
+    font-size: 18px;
+    margin-top: 5px;
+  }
+  
+  #footer ul li a {
+    text-decoration: none;
+    color: #304051;
+    font-weight: 100;
+  }
+  
+  #footer ul li a:hover {
+    text-decoration: underline;
+    color: rgb(60, 60, 172);
+  }
+  
+  footer#footer p {
+    color: #304051;
+    font-weight: 100;
+  }
+  
+  footer#footer h4 {
+    margin-bottom: 30px;
+    font-weight: 300;
+    color: #0b223a;
+  }
+  
+  /* Responsive Media Queries */
+  
+  @media only screen and (max-width: 768px) {
+    .container-sm {
+      margin-top: 100px;
+    }
+  
+    #hero-div {
+      margin-top: 150px;
+      margin-left: 0;
+      text-align: center;
+    }
+  
+    #hero-section {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    #hero-section h1 {
+      font-size: 50px;
+      max-width: 100%;
+    }
+  
+    #hero-section p {
+      width: 100%;
+      font-size: 16px;
+    }
+  
+    #hero-image {
+      margin-top: 50px;
+      width: 400px;
+      max-width: 100%;
+    }
+  
+    #about-section {
+      margin-top: 150px;
+    }
+  
+    #about-section img {
+      margin-top: 50px;
+      width: 400px;
+      max-width: 100%;
+    }
+  
+    #services-section {
+      margin-top: 100px;
+    }
+  
+    #services-section #services {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #services-section #services .services-list {
+      margin-bottom: 50px;
+    }
+  
+    #services-section #services .services-list img {
+      width: 300px;
+      max-width: 100%;
+    }
+  
+    #services-section #services .services-list h3 {
+      font-size: 25px;
+    }
+  
+    #services-section #services .services-list p {
+      width: 250px;
+      font-size: 14px;
+    }
+  
+    #epc-section {
+      margin-top: 100px;
+    }
+  
+    #epc-section #epc {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #epc-section .epc {
+      margin: 10px 0;
+    }
+  
+    #epc-section .epc img {
+      width: 250px;
+      max-width: 100%;
+    }
+  
+    #epc-section .epc .hidden-div {
+      padding: 10px;
+    }
+  
+    #how-solar-works {
+      margin-top: 100px;
+    }
+  
+    #how-solar-works > div {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #how-solar-works .solar-working-process {
+      margin: 5px 0;
+    }
+  
+    #how-solar-works .solar-working-process img {
+      width: 100px;
+      max-width: 100%;
+    }
+  
+    #how-solar-works .solar-working-process h4 {
+      font-size: 16px;
+    }
+  
+    section#faq-section div.container-sm {
+      margin-bottom: 100px;
+    }
+  
+    section#faq-section div h1 {
+      margin-top: 50px;
+    }
+  
+    footer#footer .col {
+      padding: 0;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    #hero-section h1 {
+      font-size: 40px;
+    }
+  
+    #hero-image {
+      margin-top: 30px;
+      width: 300px;
+      max-width: 100%;
+    }
+  
+    #about-section img {
+      margin-top: 30px;
+      width: 300px;
+      max-width: 100%;
+    }
+  
+    #services-section #services .services-list img {
+      width: 200px;
+      max-width: 100%;
+    }
+  
+    #services-section #services .services-list h3 {
+      font-size: 20px;
+    }
+  
+    #services-section #services .services-list p {
+      width: 200px;
+      font-size: 12px;
+    }
+  
+    #epc-section .epc img {
+      width: 200px;
+      max-width: 100%;
+    }
+  
+    #epc-section .epc .hidden-div {
+      padding: 5px;
+    }
+  
+    #how-solar-works .solar-working-process img {
+      width: 80px;
+      max-width: 100%;
+    }
+  
+    #how-solar-works .solar-working-process h4 {
+      font-size: 14px;
+    }
+  
+    section#faq-section div.container-sm {
+      margin-bottom: 70px;
+    }
+  
+    section#faq-section div h1 {
+      margin-top: 30px;
+    }
+  }
+  
+
+
+/**------------------------------------------------------------------------------------------------ responsive design----------------------------------------------------------------------------------------------------  */
+
+@media only screen and (min-width: 800px) and (max-width: 1100px){
+    header nav ul li a {
+        font-size:15px;
+    }
+}
+@media only screen and (min-width: 945px) and (max-width: 1060px) {
+    #hero-section img {
+      width: 450px;
+      margin-top: 3px;
+    }
+    #about-section {
+      flex-wrap: nowrap;
+      margin-top: 50px;
+    }
+  }
+  
+  @media only screen and (max-width: 1315px) {
+    #hero-section h1 {
+      font-size: 90px;
+      color: black;
+      max-width: 730px;
+      padding: 0;
+      margin: 0;
+      font-family: Roboto, sans-serif;
+      font-weight: 700;
+    }
+    #hero-section p {
+      font-size: 18px;
+    }
+  }
+  
+  @media only screen and (max-width: 1248px) {
+    #hero-section h1 {
+      font-size: 70px;
+      color: black;
+      max-width: 650px;
+      padding: 0;
+      margin: 0;
+      font-family: Roboto, sans-serif;
+      font-weight: 700;
+    }
+    #about-section p {
+      font-size: 16px;
+    }
+    #about-section img {
+      width: 350px;
+    }
+  }
+  
+  @media only screen and (min-width: 1000px) and (max-width: 1116px) {
+    #hero-image {
+      width: 450px;
+    }
+  }
+  
+  @media only screen and (max-width: 1000px) {
+    .container-sm {
+      margin-top: 50px;
+    }
+    #hero-section {
+      justify-content: space-around;
+      margin-top: 0px;
+    }
+    #hero-section img {
+      margin-top: 90px;
+      width: 450px;
+    }
+    #about-section {
+      justify-content: space-around;
+      margin-top: 50px;
+    }
+    #about-section img {
+      margin-top: 90px;
+      width: 450px;
+    }
+  }
+  
+  @media only screen and (min-width: 799px) and (max-width: 945px) {
+    #hero-section p {
+      max-width: 262px;
+    }
+    #hero-image {
+      width: 300px;
+    }
+    #hero-section {
+      margin-top: 0;
+    }
+  }
+  
+  @media only screen and (max-width: 800px) {
+    #nav-div {
+      display: inline-block;
+    }
+    #hero-section p {
+        width: 350px;
+    }
+    #hero-section h1 {
+        font-size: 50px;
+    }
+    #about-section {
+      justify-content: space-around;
+      margin-top: 60px;
+    }
+    #about-section img {
+      margin-top: 30px;
+      width: 340px;
+    }
+  }
+  
+  @media only screen and (max-width: 450px) {
+    #about-section {
+      justify-content: space-around;
+      margin-top: 90px;
+    }
+    #about-section img {
+      margin-top: 30px;
+      width: 260px;
+    }
+    #services-section #services .services-list div {
+      margin-top: 20px;
+    }
+    #services-section #services .services-list h3 {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+    .solar-working-process {
+      padding: 50px;
+    }
+  }
+  

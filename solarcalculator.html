@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate the solar energy potential for your property with our advanced Solar Calculator. 
+    Determine the ideal solar panel capacity, roof area, and budget based on your needs. Get accurate estimates and make informed decisions about harnessing clean, 
+    renewable energy for your home or business. Start your solar journey today with OAKSUN ENERGY!">
+    <meta name="keywords" content="solar calculator, calculate solar energy, how much kw required for solar energy">
+    <title>Solar Calculator</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha384-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <link rel="stylesheet" href="home.css">
+    <style>
+
+        #banner {
+            position: relative;
+            background-image: url('imagesforcalculator/solarcalclgimg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 400px; /* Adjust the height as needed */
+        }
+
+        #banner h1 {
+            position: absolute;
+            font-weight: 700;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 80px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          }
+
+        header nav {
+            background-color: rgba(250, 250, 250, 0.3);
+            z-index: 1000000;
+        }
+
+        header nav ul li a {
+            color: white;
+            font-weight: 100;
+        }
+
+        header nav ul li a::after {
+            content: "";
+            background: black;
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -6px;
+            left: 0;
+            transition: 0.3s;
+        }
+
+        /*-------------------------------------------- Solar Calculator  ----------------------------------*/
+
+
+        #solar-calculator {
+          margin-top: 100px;
+        }
+
+        .form-container {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 40px;
+          background-color: #f2f2f2;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+      
+        .form-container label {
+          display: block;
+          margin-bottom: 10px;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+      
+        .form-container input[type="number"] {
+          
+          width: 100%;
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 3px;
+        }
+      
+        .form-container button[id="submit"] {
+          display: block;
+          width: 100%;
+          padding: 10px;
+          margin-top: 15px;
+          background-color: #4caf50;
+          color: #fff;
+          border: none;
+          border-radius: 3px;
+          cursor: pointer;
+        }
+      
+        .form-container button[id="submit"]:hover {
+          background-color: #45a049;
+        }
+
+        #Type {
+          margin-top: 20px;
+          padding: 5px 10px;
+          cursor: grab;
+          display: block;
+        }
+        #Type option {
+          cursor: pointer;
+          background-color: #ecffed;
+        }
+        #Type option:hover {
+          background-color: #212529;
+          color: white;
+        }
+
+
+        /*---------------------------------- Result Container -----------------------------*/
+
+        #resultsContainer {
+          max-width: 1000px;
+          background-color: #eeffe6;
+          margin: 0 auto;
+          padding: 40px;
+          margin-top: 50px;
+          padding:50px;
+          display: none;
+          justify-content: space-around;
+        }
+       
+        #resultsContainer h2 {
+          color: black;
+          font-weight: 400;
+          font-size: 50px;
+          text-align: left;
+          font-family: Roboto, 'sans-serif';
+        }
+        #resultsContainer p {
+          font-size: 20px;
+          margin-top: 20px;
+          font-family: Roboto, 'sans-serif';
+          max-width: 400px
+        }
+
+        /*----------------------------------- END -------------------------------------------*/
+
+          /*------------------------------- Responsive For Mobile --------------------------*/
+
+          @media only screen and (max-width: 800px) {
+            header nav ul {
+                display: block;
+                position: fixed;
+                right: -600px;
+                top: 0;
+                width: 300px;
+                height: 99.99vh;
+                color: white;
+                text-align: center;
+                z-index: 100000000000000000;
+                transition: 0.3s;
+            }
+            header #nav-div{
+                background-color: none;
+            }
+            header nav ul li {
+                margin-top: 35px;
+                color: #212529;
+                display: block;
+            }
+            header nav ul li a {
+                color: black;
+            }
+            i.bi.bi-list::before{
+                width:55px;
+            }
+            .bi.bi-list {
+                display: block;
+                right: 0;
+                color: black;
+                font-weight: 900;
+                font-size: 45px;
+            } 
+            .bi.bi-x-lg {
+                display: block;
+                position: absolute;
+                top: 10px;
+                right: 6px;
+                color: #212529;
+                font-weight: 900;
+                font-size: 35px;
+                margin-bottom: 20px;
+              }
+            
+            header #nav-div {
+                display: block;
+                position: fixed;
+                background-color: white;
+                z-index: 1000000;
+            }
+          }    
+        
+        
+    </style>
+
+</head>
+<body>
+
+    <section id="banner"> 
+    <header>
+        <nav id="nav-bar">
+          <div><img src="images/oaksunlogo2.png" alt="Oaksun Energy Logo" id="logo"></div>
+          <ul id="nav-div">
+            <i class="bi bi-x-lg" onclick="closeNav()"></i>
+            <li><a href="https://oaksun.in">Home</a></li>
+            <li><a href="https://oaksun.in/about-us.html">About</a></li>
+            <li><a href="https://oaksun.in/services.html">Services</a></li>
+            <li><a href="https://oaksun.in/contact-us.html">Contact Us</a></li>
+            <li><a href="https://oaksun.in/solarcalculator.html">Calculator</a></li>
+          </ul>
+          <i class="bi bi-list" onclick="openNav()"></i>
+        </nav>
+        <h1>Solar Calculator</h1>
+    </header>
+    </section>
+
+    <section id="solar-calculator">
+
+        <div class="continer-sm">
+
+          <div class="form-container">
+            <form id="solarCalculatorForm">
+              <label for="electricityUsage">Electricity Usage (kWh/month):</label>
+              <input type="number" id="electricityUsage" name="electricityUsage" required>
+<!--           
+              <label for="solarSystemSize">Solar System Size (kW):</label>
+              <input type="number" id="solarSystemSize" name="solarSystemSize" required>
+           -->
+              <label for="electricityRate">Electricity Rate (per kWh):</label>
+              <input type="number" id="electricityRate" name="electricityRate" required>
+
+              <select name="Type" id="Type">
+                <option value="residential">residential</option>
+                <option value="commercial">Commercial</option>
+                <option value="industrial">Industrial</option>
+              </select>
+          
+              <button id="submit">Calculate</button>
+            </form>
+          </div>
+
+          
+          <div class="container-sm" id="resultsContainer">
+
+          </div>
+          
+
+        </div>
+
+    </section>
+
+
+    <script>
+
+
+    /*---------------------------------NAV BAR------------------------------*/
+        
+    function openNav (){
+        const navmenu = document.getElementById('nav-div')
+        navmenu.style.right = "0"
+      }
+      function closeNav (){
+        const navmenu = document.getElementById('nav-div')
+        navmenu.style.right = "-300px"
+      }
+       
+    const navbar = document.getElementById('nav-bar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) {
+          navbar.style.backgroundColor = "white";
+        }
+        else {
+          navbar.style.backgroundColor = "rgba(255, 255, 255, 0.3)"
+        }
+      });
+
+    /*-------------------- END NAV BAR ------------------------------*/
+    
+    
+    const whyWeElements = document.querySelectorAll('.services');
+    const animationTriggered = [];
+    
+    whyWeElements.forEach((element) => {
+      animationTriggered.push(false);
+    });
+    
+    const reloadHandler = () => {
+      whyWeElements.forEach((element, index) => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        const elementVisible = elementPosition < windowHeight;
+    
+        if (elementVisible && !animationTriggered[index]) {
+          gsap.from(element, {
+            opacity: 0.1,
+            y: 350,
+            stagger: 0.4,
+            duration: 1.5,
+            ease: 'power4.out'
+          });
+          animationTriggered[index] = true;
+        }
+      });
+    };
+    
+    const scrollHandler = () => {
+      reloadHandler();
+    };
+    
+    window.addEventListener('load', scrollHandler);
+    window.addEventListener('scroll', scrollHandler);
+    window.addEventListener('beforeunload', () => {
+      window.removeEventListener('load', scrollHandler);
+      window.removeEventListener('scroll', scrollHandler);
+    });
+
+
+    /*----------------------------------- Calculator ------------------------------------*/
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('solarCalculatorForm');
+    
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+    
+        var electricityUsage = parseFloat(document.getElementById('electricityUsage').value);
+        var electricityRate = parseFloat(document.getElementById('electricityRate').value);
+        var type = document.getElementById('Type').value;
+        
+        
+        var unitprices = {
+            residential:"8",
+            commercial:"12"
+        }
+    
+        var oneKwCanGeneratePerMonth = 120; 
+        var estimatedKW = (electricityUsage / oneKwCanGeneratePerMonth)
+        var unitsPerMonthWithSolar = 4.5 * estimatedKW;
+        var ROI = (estimatedKW * 60000)  /  (((4.5  * estimatedKW) *  (365)) * (electricityRate));
+        
+        // Display the results
+        if(type == "residential") {
+          var resultsContainer = document.getElementById('resultsContainer');
+          resultsContainer.style.display = "flex";
+          resultsContainer.innerHTML = `
+          <div>
+            <h2>Required KW:</h3>
+            <p>Based on your ${type} electricity usage and rates, our estimation indicates 
+              that you would require approximately <strong>${estimatedKW.toFixed()} kilowatts (KW) </strong>of solar power capacity. 
+            </p>
+          </div>
+          
+          <div>
+            <h2>ROI</h2>
+            <p>You can claim your ROI within just <strong> ${ROI.toFixed()} years </strong>, making solar energy a smart and profitable investment. Embrace sustainability and financial benefits with solar power.</p>
+          </div>  
+          `;
+        }
+        else{
+          var resultsContainer = document.getElementById('resultsContainer');
+          resultsContainer.innerHTML = `
+          <div>
+            <h2>Required KW:</h3>
+            <p>Based on your ${type} electricity usage and rates, our estimation indicates 
+              that you would require approximately <strong>${estimatedKW.toFixed()} kilowatts (KW) </strong>of solar power capacity. 
+            </p>
+          </div>
+          
+          <div>
+            <h2>ROI</h2>
+            <p>You can claim your ROI within just ${ROI.toFixed()} years, making solar energy a smart and profitable investment. Embrace sustainability and financial benefits with solar power.</p>
+          </div>  
+          `;
+        }
+      });
+    });
+    
+    
+
+
+
+
+
+    </script>
+
+</body>
+</html>
